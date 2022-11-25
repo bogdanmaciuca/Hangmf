@@ -15,7 +15,7 @@ int main() {
 		gfx.HandleMessages();
 		gfx.BeginFrame();
 		gfx.DrawText(L"Hello mfs", 9, text_format, 100, 100, 600, 100, color);
-		gfx.EndFrame();
+		gfx.EndFrame();///test
 	}
 	return 0;
 }
