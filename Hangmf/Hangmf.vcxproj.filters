@@ -26,5 +26,11 @@
     <ClInclude Include="vendor\2d_graphics\2d_graphics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="backend.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="frontend.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
