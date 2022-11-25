@@ -1,5 +1,6 @@
 #pragma once
 #include "vendor/2d_graphics/2d_graphics.h"
+#include "input.h"
 
 namespace std {
 	wstring stow(const std::string& s) {
@@ -31,6 +32,7 @@ void DrawWord(const std::string& word) {
 // Also handles messages btw
 void DrawFrame(const std::string &word, const char& lives) {
 	g_gui.HandleMessages();
+
 	g_gui.BeginFrame();
 	DrawWord(word);
 	DrawLives(lives);
