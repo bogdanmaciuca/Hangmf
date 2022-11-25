@@ -14,7 +14,7 @@ int main() {
 	Input input;
 
 	std::string word = "";
-	std::string curr_word = InitGame(word, 1);
+	std::string curr_word = InitGame(word, 3);
 	char lives = 5;
 	while (1) {
 		input.Update();
