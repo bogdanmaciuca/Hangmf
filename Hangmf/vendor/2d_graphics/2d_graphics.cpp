@@ -192,7 +192,7 @@ void Graphics::DrawSprite(const Sprite& sprite, float x, float y, float angle, f
 
 	m_render_target->DrawBitmap(
 		sprite.bitmap,
-		D2D1::RectF(rel_x, rel_y, sprite.width, sprite.height),
+		D2D1::RectF(rel_x, rel_y, rel_x + sprite.width, rel_y + sprite.height),
 		opacity, D2D1_BITMAP_INTERPOLATION_MODE_LINEAR,
 		D2D1::RectF(0, 0, sprite.src_width, sprite.src_height)
 	);
