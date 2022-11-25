@@ -6,6 +6,7 @@
 #pragma comment(lib, "Ole32")
 
 int main() {
+	// kkt
 	Graphics gfx("Hang person", 800, 600);
 	Graphics::TextFormat text_format;
 	gfx.CreateTextFormat(L"Arial", 30, &text_format);
