@@ -14,22 +14,25 @@ int main() {
 	Input input;
 
 	std::string word = "";
-	std::string curr_word = InitGame("CUVANT", 1);
+	std::string curr_word = InitGame(word, 1);
 	char lives = 3;
-
 	while (1) {
 		input.Update();
 		char key_pressed = 0;
-		for (int i = 0; i < MAX_KEYS; i++) {
-			if (input.GetKeyPressed(i)) key_pressed = i;
+		for (int i = -1; i < MAX_KEYS; i++) {
+			if (input.GetKeyPressed(i))
+			{
+				key_pressed = i;
+				break;
+			}
 		}
 		if (key_pressed && isalpha(key_pressed)) {
 			if (islower(key_pressed)) key_pressed -= 32;
-			if (LetterIsInWord(curr_word, key_pressed, word) == "") {
+			if (!LetterIsInWord(curr_word, key_pressed, word)) {
 				lives--;
 			}
 		}
-		DrawFrame(word, lives);
+		DrawFrame(curr_word, lives);
 	}
 	return 0;
 }
