@@ -16,7 +16,7 @@ const float life_width = 100.0f;
 
 void InitGUI() {
 	g_gui.Create("HangPerson", 800, 600);
-	g_gui.CreateTextFormat(L"Arial", 30.0f, &g_tf);
+	g_gui.CreateTextFormat(L"Consolas", 30.0f, &g_tf);
 	g_gui.LoadSprite(L"res/life.png", &life_sprite);
 	life_sprite.width = life_width;
 	life_sprite.height = life_width;

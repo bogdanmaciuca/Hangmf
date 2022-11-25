@@ -23,23 +23,25 @@ std::string GetWord(int difficulty)
 	return word;
 }
 
-bool LetterIsInWord(std::string &current_word, char letter, std::string word)
+bool FindLetter(std::string text, char c)
 {
-	if (word.find(letter) && !current_word.find(letter))
+	for (int i = 0; i < text.size(); i++)
+		if (text[i] == c)
+			return 1;
+	return 0;
+}
+
+bool LetterIsInWord(std::string& current_word, char letter, std::string word)
+{
+	if (FindLetter(word, std::tolower(letter)))
 	{
 		for (int i = 0; i < word.length(); i++)
-			if (word[i] == letter)
+			if (word[i] == std::tolower(letter))
 				current_word[i] = letter;
 		return 1;
 	}
 	else
-<<<<<<< HEAD
-	{
-		return "";
-	}
-=======
 		return 0;
->>>>>>> 302b6342a459d3852175127c64054689892f2d3d
 }
 
 std::string InitGame(std::string &word, int difficulty)
@@ -47,21 +49,13 @@ std::string InitGame(std::string &word, int difficulty)
 	word = GetWord(difficulty);
 	srand(time(NULL));
 
-	std::string letters;
-	
-	letters.push_back(word[0]);
-	letters.push_back(word[word.length()-1]);
-
 	std::string result;
 	result = word;
 	for(int i = 1; i< word.length() - 1; i++)
 		result[i] = '_';
+	result[0] = std::toupper(result[0]);
+	result[result.length() - 1] = std::toupper(result[result.length() - 1]);
 
-	/*
-	for (int i = 0; i < word.length(); i++)
-		if (letters.find(result[i]))
-			result[i] = '_';
-	*/
 	return result;
 }
 
