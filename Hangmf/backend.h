@@ -30,8 +30,7 @@ std::string LetterIsInWord(std::string current_word, char letter, std::string wo
 	}
 	else
 	{
-		std::string empty = "";
-		return empty;
+		return "";
 	}
 }
 
