@@ -3,11 +3,19 @@
 #include <fstream>
 #include <string>
 
-std::string GetWord()
+std::string GetWord(int difficulty)
 {
 	std::string word;
+	int dif[4]; //number of words in each...
 	std::ifstream input("words.in");
-	input >> word;
+	for (int i = 0; i < 3; i++)
+		input >> dif[i];
+	input.get();
+	
+	int line = 0;
+	for (int i = 0; i < difficulty - 1; i++)
+		line += dif[i];
+	line += rand() % dif[difficulty];
 	return word;
 }
 
@@ -21,12 +29,15 @@ std::string LetterIsInWord(std::string current_word, char letter, std::string wo
 		return current_word;
 	}
 	else
-		return NULL;
+	{
+		std::string empty = "";
+		return empty;
+	}
 }
 
 std::string InitGame(std::string word, int difficulty)
 {
-	word = GetWord();
+	word = GetWord(difficulty);
 	srand(time(NULL));
 
 	std::string letters;
