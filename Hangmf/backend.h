@@ -34,6 +34,7 @@ std::string GetWord(int difficulty)
 	line += rand() % dif[difficulty-1];
 	for (int i = 0; i <= line; i++)
 		input >> word;
+	input.close();
 	return word;
 }
 
